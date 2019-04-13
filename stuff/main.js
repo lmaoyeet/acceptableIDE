@@ -30,10 +30,9 @@ editor.focus();
 
 editor.setOptions({
     fontSize: "16pt",
-    showLineNumbers: false,
-    showGutter: false,
+    showLineNumbers: true,
     vScrollBarAlwaysVisible:true,
-    enableBasicAutocompletion: false, enableLiveAutocompletion: false
+    enableBasicAutocompletion: true, enableLiveAutocompletion: true
 });
 
 editor.setShowPrintMargin(false);
@@ -67,3 +66,6 @@ function download(data, filename, type) {
         }, 0); 
     }
 }
+editor.setOptions({
+    enableBasicAutocompletion: true
+});
