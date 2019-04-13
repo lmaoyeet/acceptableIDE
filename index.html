@@ -1,9 +1,11 @@
 <!--<!DOCTYPE html>-->
 <html>
     <head>
-        <script src="stuff/ace.js"></script>
+        <!-- <script src="stuff/ace.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js"></script>
         <script src="upup.min.js"></script>
         <link rel="stylesheet" href="stuff/main.css">
+        <link rel="stylesheet" href="stuff/dropdown.css">
         <link rel="stylesheet" href="bootstrap.min.css">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -16,17 +18,36 @@
         <style>
             body {
                 background: url("theme/vaporwave3.jpg");
+                /* background: #2F3129; */
+                color: #8F908A
+            }
+            #menu{
+                height: auto;
+                width: 50%;
+                background: #2F3129;
             }
             iframe {
                 background: white;
             }
+            
         </style>
     </head>
     <body onload='ready();'>
             <div id="menu">
+                    <!-- <a onclick="save();">Save</a>
+                    <a onclick="reset();">New</a> -->   
+                    <a>File:</a>
+                    <a onclick="reset();">New File</a>
+                    <a onclick="window.open('index.html');">New Window</a>
                     <a onclick="save();">Save</a>
-                    <a onclick="reset();">New</a>
-            </div>
+                    <br>
+                    <a>Type:</a>
+                    <a onclick="newJS();">JS</a>
+                    <a onclick="newHTML();">HTML</a>
+                    <a onclick="newCSS();">CSS</a>
+                    <a style="margin-left: 200px">FileName:</a><a id="fileName" contenteditable="true" style="display: inline-block; margin-lefT: 50%; border: solid 2px rgb(37, 35, 35); padding:4px;">index.html</a>
+                    
+                </div>
         <div id='container'>
         <div id="thing">
             <div id='editor'></div>

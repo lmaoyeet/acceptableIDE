@@ -1,3 +1,4 @@
+ace.require("ace/ext/language_tools");
 function update()
 {
     var idoc = document.getElementById('iframe').contentWindow.document;
@@ -32,7 +33,7 @@ editor.setOptions({
     fontSize: "16pt",
     showLineNumbers: true,
     vScrollBarAlwaysVisible:true,
-    enableBasicAutocompletion: true, enableLiveAutocompletion: true
+    enableBasicAutocompletion: true, enableLiveAutocompletion: false
 });
 
 editor.setShowPrintMargin(false);
@@ -44,7 +45,7 @@ function ready() {
     update();
 }
 function save() {
-    download(editor.getValue(), 'index.html', "text/javascript");
+    download(editor.getValue(), document.getElementById("fileName").innerHTML, "text/javascript");
 }
 function reset() {
     setupEditor();
@@ -69,3 +70,12 @@ function download(data, filename, type) {
 editor.setOptions({
     enableBasicAutocompletion: true
 });
+function newJS() {
+    editor.getSession().setMode("ace/mode/javascript");
+}
+function newCSS() {
+    editor.getSession().setMode("ace/mode/css");
+}
+function newHTML() {
+    editor.getSession().setMode("ace/mode/html");
+}
