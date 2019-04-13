@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "AcceptableIDE-ish",
+    "short_name": "aids",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
