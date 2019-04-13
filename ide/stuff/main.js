@@ -13,7 +13,7 @@ function setupEditor()
 window.editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
 editor.getSession().setMode("ace/mode/html");
-editor.setValue(`<!DOCTYPE html>
+(`<!DOCTYPE html>
 <html>
 <head>
 </head>
@@ -46,6 +46,9 @@ function ready() {
 }
 function save() {
     download(editor.getValue(), document.getElementById("fileName").innerHTML, "text/javascript");
+}
+function ready() {
+    setupEditor();
 }
 function reset() {
     setupEditor();
