@@ -9,24 +9,37 @@
         <meta name="theme-color" content="#ffffff">
 <style>
     body {
-        background: url("ide/theme/ahegao2.jpg");
+        background: url("ide/theme/vaporwave2.jpg");
         background-size: cover;
     }
     #iframe1 {
         position: absolute;
         border: 1px solid black;
         text-align: center;
+        display: inline;
+        z-index: 1;
     }
     #iframe1drag {
         padding: 5px;
         cursor: move;
     }
+    #musak {
+        position: absolute;
+        z-index: 0;
+    }
 </style>
+
 <div id="iframe1">
     <div id="iframe1drag">----acceptableIDE----</div>
-    <iframe width="600" height="400" src="ide/index.html"></iframe>
+    <iframe width="600" height="400" src="ide/index.html"></iframe><br>
+</div>
+
+<div id="lofi" style="border: 1px solid black; width: 83">
+    <h4>lofi</h4>
+<iframe width="80" height="80" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/752806110&color=%2300ffeb&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 </div>
 <script>
+    
     // Make the DIV element draggable:
     dragElement(document.getElementById("iframe1"));
 
@@ -36,7 +49,7 @@
         // if present, the header is where you move the DIV from:
         document.getElementById(elmnt.id + "iframe1drag").onmousedown = dragMouseDown;
     } else {
-        // otherwise, move the DIV from anywhere inside the DIV: 
+        // otherwise, move the DIV from anywhere inside the DIV:
         elmnt.onmousedown = dragMouseDown;
     }
 
