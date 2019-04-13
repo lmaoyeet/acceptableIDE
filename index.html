@@ -50,6 +50,29 @@
         display: inline;
         z-index: 1;
     }
+    
+    #iframe3drag {
+        padding: 4px;
+        cursor: move;
+    }
+    #iframe3 {
+        position: absolute;
+        border: 1px solid black;
+        text-align: center;
+        display: inline;
+        z-index: 3;
+    }
+    #viewdrag {
+        padding: 4px;
+        cursor: move;
+    }
+    #view {
+        position: absolute;
+        border: 1px solid black;
+        text-align: center;
+        display: inline;
+        z-index: 3;
+    }
 </style>
 <body>
 <div id="iframe1">
@@ -70,16 +93,29 @@
     <iframe width="600" height="400" src="ide/index.html"></iframe><br>
 </div>
 
+<div id="iframe3">
+    <div id="iframe3drag">----acceptableIDE----</div>
+    <iframe width="600" height="400" src="ide/index.html"></iframe>
+</div>
+
+<div id="view">
+    <div id="viewdrag">----view----</div>
+    <iframe id="viewwindow" width="600" height="400" src="../index.html"></iframe>
+</div>
 
 
 <script>
-
+    setInterval(updateView, 500);
+    function updateView() {
+        document.getElementById("viewwindow").src="../index.html";
+    }
     // Make the DIV element draggable:
     dragElement(document.getElementById("iframe1"));
     dragElement(document.getElementById("lofi"));
     dragElement(document.getElementById("iframe2"));
     dragElement(document.getElementById("notlofi"));
-
+    dragElement(document.getElementById("iframe3"));
+    dragElement(document.getElementById("view"));
     function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.getElementById(elmnt.id + "iframe1drag")) {
